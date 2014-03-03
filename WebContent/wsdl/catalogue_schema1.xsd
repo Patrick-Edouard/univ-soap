@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema xmlns:tns="http://webservice.server/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://webservice.server/" version="1.0">
+<xs:element name="getVoyages" type="tns:getVoyages"/>
+<xs:element name="getVoyagesResponse" type="tns:getVoyagesResponse"/>
+<xs:complexType name="getVoyages">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getVoyagesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:voyage"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="voyage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" type="xs:string"/>
+      <xs:element minOccurs="0" name="destinationPays" type="xs:string"/>
+      <xs:element minOccurs="0" name="destinationVille" type="xs:string"/>
+      <xs:element minOccurs="0" name="photo" type="xs:string"/>
+      <xs:element minOccurs="0" name="prix" type="xs:string"/>
+      <xs:element minOccurs="0" name="regime" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

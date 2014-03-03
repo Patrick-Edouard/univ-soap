@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CatalogueService" targetNamespace="http://webservice.server/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://webservice.server/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://webservice.server/" schemaLocation="catalogue_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="getVoyagesResponse">
+    <wsdl:part name="parameters" element="tns:getVoyagesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoyages">
+    <wsdl:part name="parameters" element="tns:getVoyages">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Catalogue">
+    <wsdl:operation name="getVoyages">
+      <wsdl:input name="getVoyages" message="tns:getVoyages">
+    </wsdl:input>
+      <wsdl:output name="getVoyagesResponse" message="tns:getVoyagesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CatalogueServiceSoapBinding" type="tns:Catalogue">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getVoyages">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getVoyages">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getVoyagesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CatalogueService">
+    <wsdl:port name="CataloguePort" binding="tns:CatalogueServiceSoapBinding">
+      <soap:address location="http://localhost:9090/CataloguePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
