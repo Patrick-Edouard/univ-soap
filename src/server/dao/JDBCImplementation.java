@@ -17,9 +17,9 @@ public class JDBCImplementation {
 	static private JDBCImplementation instance;
 	private String urlDB = "jdbc:postgresql://localhost/postgres";
 	private String user = "postgres";
-    private String password = "motdepasse";
-    private Connection con = null;
-    private ArrayList<Voyage> mesVoyages;
+        private String password = "motdepasse";
+        private Connection con = null;
+        private ArrayList<Voyage> mesVoyages;
 	
 	private JDBCImplementation(){
 		this.mesVoyages = new ArrayList<>();
